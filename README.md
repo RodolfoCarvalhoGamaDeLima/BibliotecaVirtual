@@ -1,6 +1,7 @@
 📚 Biblioteca Virtual
 
-📝 Descrição
+
+Descrição     
 Este é um projeto de pesquisa de livros onde os usuários podem buscar livros por nome e visualizar mais informações em um modal interativo.
 
 🚀 Funcionalidades
@@ -17,10 +18,7 @@ Este é um projeto de pesquisa de livros onde os usuários podem buscar livros p
 
 ❌ Fechar o modal clicando no botão "Fechar"
 
-🛠️ Tecnologias Utilizadas
-
-React.js 
-
-Styled-components 
-
-JavaScript 
+🛠️ Tecnologias Utilizadas:
+React.js  
+Styled-components   
+JavaScript   
