@@ -40,7 +40,7 @@ export default function CarouselRatio() {
       .catch((err) => console.error("Erro ao buscar livros:", err));
   }, []);
 
-  const livrosDuplicados = [...livros, ...livros]; // looping suave
+  const livrosDuplicados = [...livros, ...livros]; 
 
   return (
     <CarouselContainer>
@@ -54,7 +54,7 @@ export default function CarouselRatio() {
               minWidth: 160,
               minHeight: 220,
               borderRadius: '16px',
-              bgcolor: 'white',
+              bgcolor: '#6317EB',
               boxShadow: 'lg',
             }}
           >
@@ -66,7 +66,7 @@ export default function CarouselRatio() {
               />
             </AspectRatio>
             <Box sx={{ p: 1, textAlign: 'center' }}>
-              <Typography level="title-md" sx={{ fontWeight: 'bold' }}>
+              <Typography level="title-md" sx={{ fontWeight: 'bold', color: '#fff' }}>
                 {livro.nome}
               </Typography>
             </Box>

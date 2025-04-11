@@ -10,7 +10,6 @@ const AppContainer = styled.div`
   gap: 25px;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(90deg, #A612EA 35%, #6317EB 165%);
 
   @media (max-width: 760px) {
         gap: 10px;
@@ -32,7 +31,6 @@ const PesquisaContainer = styled.div `
 const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(90deg, #A612EA 35%, #6317EB 165%);
 
 `;
 

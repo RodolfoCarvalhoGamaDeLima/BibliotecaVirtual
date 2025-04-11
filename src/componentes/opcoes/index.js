@@ -15,6 +15,7 @@ const Opcao = styled.li`
   cursor: pointer;
   color: white;
 
+
   @media (max-width: 760px) {
     justify-content: center;
   }
@@ -22,6 +23,7 @@ const Opcao = styled.li`
 
 const Opcoes = styled.ul`
   display: flex;
+  gap: 10px;
   
   @media (max-width: 760px) {
     flex-direction: column;
@@ -30,7 +32,14 @@ const Opcoes = styled.ul`
 
 const Texto = styled.h1`
   color: #fff;
-  font-size: 25px;
+  font-size: 18px;
+  text-decoration: none;
+`;
+
+const Icon = styled.h1`
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
 `;
 
 const mock = [
@@ -54,7 +63,7 @@ function OpcoesHeader() {
       {mock.map((item, index) => (
         <Link to={`/${item.name.toLowerCase()}`} key={index}>
           <Opcao>
-            <div>{item.icon}</div>
+            <Icon>{item.icon}</Icon>
             <Texto>{item.name}</Texto>
           </Opcao>
         </Link>

@@ -4,9 +4,7 @@ import { GetFavoritos } from "../servicos/favoritos";
 
 const FavoritosContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  background-image: linear-gradient(90deg, #a612ea 35%, #6317eb 165%);
-  
+  flex-direction: column;  
 `;
 
 const ResultadoContainer = styled.div`
@@ -15,31 +13,46 @@ const ResultadoContainer = styled.div`
     justify-content: center;
     overflow: auto;
     scroll-snap-type: x mandatory;
+    gap: 35px;
 `;
 
 const Resultado = styled.div`
     display: flex;
     align-items: center;
+    background-color:#6317EB;
     width: 300px;
-    gap:35px;
-    margin: 20px 0;
+    gap: 10px;
     cursor: pointer;
     text-align: center;
-    padding: 0 100px;
-    p {
-        width: 200px;
-        color: #FFF;
-    }
+    padding: 10px 100px;
+    border-radius: 16px;
+
     img {
         width: 100px;
     }
     &:hover {
-        border: 1px solid white;
+        scale: 1.1;
     }
+
+    @media (max-width: 760px) {
+        width: 100px;
+        gap: 15px;
+
+        img {
+        width: 65px;
+    }
+
+        &:hover {
+        opacity: 0.35;
+        scale:1;
+    }
+
+  }
+
 `;
 
 const Titulo = styled.h2`
-     color: #FFF;
+     color: #7a7a7a;
      font-size: 36px;
      text-align: center;
      width: 100%;
@@ -51,6 +64,11 @@ const Nome = styled.h2`
      font-size: 30px;
      text-align: center;
 
+     @media (max-width: 760px) {
+        width: 100px;
+        gap: 15px;
+        font-size: 12px;
+  }
 `;
 
 function Favoritos() {
