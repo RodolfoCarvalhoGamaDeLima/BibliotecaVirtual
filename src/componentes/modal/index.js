@@ -1,74 +1,122 @@
-import React from "react";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
 import styled from "styled-components";
-import { livros } from "../pesquisa/dadosPesquisa";
+import { ImHeart } from "react-icons/im";
+import { PostFavoritos } from "../../servicos/favoritos";
 
-const ModalBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ModalContainer = styled.div`
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
-  color: black;
-`;
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "70%",
+  maxWidth: 400,
+  bgcolor: "background.paper",
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 3,
+  outline: "none",
+};
 
 const LivroItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  padding: 10px;
+  gap: 12px;
+  text-align: center;
+  color: black;
+
   img {
-    width: 50px;
-    margin-right: 10px;
+    width: 100px;
+    border-radius: 6px;
   }
 `;
-const CloseButton = styled.button`
-  margin-top: 10px;
+
+const ButtonDIV = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 15px;
+`;
+
+const ButtonFavorito = styled.button`
   padding: 8px 15px;
-  background-color: #e63f00;
+  background-color: #6a0daf;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+
   &:hover {
-    background-color: #c23300;
+    background-color: #b530fc;
   }
 `;
-const Sinopse = styled.p `
-    font-size: 15px;
-    text-align: justify;
-`;
-function Modal({ Aberto, SetFechado, livro }) {
-    if (!Aberto) return null;
-    if (!livros) return null; // Se livro for null, não exibe o modal
 
+const ButtonFechar = styled.button`
+  padding: 8px 15px;
+  background-color: #6a0daf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
 
-    return (
-        <ModalBackground onClick={SetFechado}>
-        <ModalContainer onClick={(e) => e.stopPropagation()}>
-            <LivroItem>
-                <img src={livro.src} alt={livro.nome} />
-                <h3>{livro.nome}</h3>
-                <p><strong>Autor:</strong> {livro.autor}</p>
-                <Sinopse> <strong>Sinopse:</strong> {livro.sinopse} </Sinopse>
-                <CloseButton onClick={SetFechado}>Fechar</CloseButton>
-            </LivroItem>
-        </ModalContainer>
-    </ModalBackground>
-);
+  &:hover {
+    background-color: #b530fc;
   }
-export default Modal
+`;
+
+const Sinopse = styled.p`
+  font-size: 15px;
+  text-align: justify;
+`;
+
+async function insereFavorito(id) {
+  try {
+    await PostFavoritos(id);
+    alert("Livro Inserido");
+  } catch (error) {
+    console.error("Erro ao inserir favorito:", error);
+    alert("Houve um erro ao inserir o livro nos favoritos.");
+  }
+}
+
+export default function ModalLivro({ Aberto, SetFechado, livro }) {
+  if (!livro) return null;
+
+  return (
+    <Modal
+      open={Aberto}
+      onClose={SetFechado}
+      aria-labelledby="modal-livro-title"
+      aria-describedby="modal-livro-description"
+    >
+      <Box sx={style}>
+        <LivroItem>
+          <img src={livro.imagem} alt={livro.nome} />
+          <Typography variant="h6" id="modal-livro-title">
+            {livro.nome}
+          </Typography>
+          <Typography variant="body2">
+            <strong>Autor:</strong> {livro.autor}
+          </Typography>
+          <Sinopse>
+            <strong>Sinopse:</strong> {livro.sinopse}
+          </Sinopse>
+
+          <ButtonDIV>
+            <ButtonFavorito onClick={() => insereFavorito(livro.id)}>
+              Favoritar <ImHeart style={{ marginLeft: 5 }} />
+            </ButtonFavorito>
+            <ButtonFechar onClick={SetFechado}>Fechar</ButtonFechar>
+          </ButtonDIV>
+        </LivroItem>
+      </Box>
+    </Modal>
+  );
+}
