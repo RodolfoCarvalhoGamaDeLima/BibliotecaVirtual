@@ -4,7 +4,7 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
 import { ImHeart } from "react-icons/im";
-import { PostFavoritos } from "../../servicos/favoritos";
+
 
 const style = {
   position: "absolute",
@@ -76,17 +76,10 @@ const Sinopse = styled.p`
   text-align: justify;
 `;
 
-async function insereFavorito(id) {
-  try {
-    await PostFavoritos(id);
-    alert("Livro Inserido");
-  } catch (error) {
-    console.error("Erro ao inserir favorito:", error);
-    alert("Houve um erro ao inserir o livro nos favoritos.");
-  }
-}
 
-export default function ModalLivro({ Aberto, SetFechado, livro }) {
+
+export default function ModalLivro({ Aberto, SetFechado, livro, insereFavorito }) {
+
   if (!livro) return null;
 
   return (

@@ -11,11 +11,12 @@ async function PostFavoritos (id) {
     await favoritosAPI.post (`/${id}`)
 }
 
-async function DeleteFavoritos (id) {
-    await favoritosAPI.post (`/${id}`)
-}
+// async function DeleteFavoritos (id) {
+//     await favoritosAPI.post (`/${id}`)
+// } add posteriomente 
+
 export {
     GetFavoritos,
     PostFavoritos,
-    DeleteFavoritos,
+    // DeleteFavoritos,
 }

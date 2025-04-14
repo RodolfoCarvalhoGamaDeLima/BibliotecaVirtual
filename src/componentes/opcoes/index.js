@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { MdOutlineMenuBook, MdCategory } from "react-icons/md";
+import { MdOutlineMenuBook } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
 
@@ -47,10 +47,10 @@ const mock = [
     name: "Minha Estante", 
     icon: <MdOutlineMenuBook/>,
   },
-  {
-    name: "Categorias", 
-    icon: <MdCategory/>,
-  },
+  // {
+  //   name: "Categorias", 
+  //   icon: <MdCategory/>,
+  // } add posteriomente,
   {
     name: "Favoritos", 
     icon: <FaHeart/>,

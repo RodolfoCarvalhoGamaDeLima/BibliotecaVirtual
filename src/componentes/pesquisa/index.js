@@ -5,6 +5,8 @@ import Modal from '../modal';
 import { Titulo } from '../titulo';
 import { GetLivros } from '../../servicos/livros';
 import { MdOutlineSearch } from "react-icons/md";
+import { PostFavoritos } from "../../servicos/favoritos";
+import Swal from "sweetalert2";
 
 const PesquisaContainer = styled.section`
     color: #FFF;
@@ -142,6 +144,31 @@ function Pesquisa() {
         setLivrosPesquisados(resultadoPesquisa);
     };
 
+    const insereFavorito = async (id) => {
+        try {
+          await PostFavoritos(id);
+    
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Livro inserido com sucesso!",
+            showConfirmButton: true,
+            timer: 1500,
+          });
+          setModalOpen(false);
+        } catch (error) {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Erro ao adicionar livro",
+                showConfirmButton: true,
+                timer: 1500,
+              });
+          setModalOpen(false);
+        }
+      };
+
+      
     return (
         <PesquisaContainer>
                 <Titulo cor={"#7a7a7a"} >Já sabe por onde começar?</Titulo>
@@ -168,7 +195,7 @@ function Pesquisa() {
                 </Resultado>
             ))}
             </ResultadoPesquisa>
-            <Modal Aberto={modalOpen} SetFechado={() => setModalOpen(false)} livro={livroSelecionado} />
+            <Modal Aberto={modalOpen} SetFechado={() => setModalOpen(false)} livro={livroSelecionado} insereFavorito={insereFavorito} />
         </PesquisaContainer>
     )
 }

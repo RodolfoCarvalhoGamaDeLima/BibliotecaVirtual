@@ -4,7 +4,8 @@ import { GetFavoritos } from "../servicos/favoritos";
 
 const FavoritosContainer = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  margin-bottom: 10px;
 `;
 
 const ResultadoContainer = styled.div`
