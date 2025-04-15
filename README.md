@@ -1,24 +1,47 @@
-📚 Biblioteca Virtual
+📚 Projeto de Pesquisa e livros favoritos
+
+Este projeto é uma aplicação web desenvolvida com React que permite aos usuários pesquisarem livros, visualizarem detalhes e favoritar os livros pesquisados. A interface é responsiva e amigável, oferecendo uma experiência fluida tanto no desktop quanto em dispositivos móveis.
+
+🚀 **Funcionalidades**
+
+🔍 Pesquisa de livros pelo nome
+
+📖 Visualização dos detalhes do livro (nome, autor, sinopse e imagem)
+
+💜 Adição de livros à lista de favoritos
+
+📦 Consumo de API para carregar e salvar dados
 
 
-Descrição     
-Este é um projeto de pesquisa de livros onde os usuários podem buscar livros por nome e visualizar mais informações em um modal interativo.
+🛠️ **Tecnologias Utilizadas**
 
-🚀 Funcionalidades
+ReactJS – biblioteca principal para construção da interface
 
-🔍 Pesquisar livros digitando o nome e clicando em "Pesquisar"
+Styled-Components – para estilização dos componentes com CSS-in-JS
 
-📖 Exibir os resultados da pesquisa
+React Icons – ícones modernos e personalizáveis
 
-![Demostração da pesquisa](https://private-user-images.githubusercontent.com/114117138/415766151-5d7900ed-49c1-44d3-9412-7c4b23f45925.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDAxNjAyNzksIm5iZiI6MTc0MDE1OTk3OSwicGF0aCI6Ii8xMTQxMTcxMzgvNDE1NzY2MTUxLTVkNzkwMGVkLTQ5YzEtNDRkMy05NDEyLTdjNGIyM2Y0NTkyNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIyMVQxNzQ2MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02MGUyZjYwOTA1NTRjMDQ0MzI4YmZjNzAzMzBhODA0OGViNzkxNmQwYmVlNzk0YzIzOGQyYjA3NWEzNTFmMWFhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-VHLGdVmFtmfLYcrPwVD8bxW6gJu97tPdCukfhge_-w)
+SweetAlert2 – alertas e mensagens visuais
 
-🖼️ Abrir um modal ao clicar em um livro para ver mais detalhes
+Mui Material – Carrosel e Modal
 
-![Demostração do resultado da pesquisa](https://private-user-images.githubusercontent.com/114117138/415766330-b1825ceb-ece6-4b9b-af56-833c2f94b022.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDAxNjAyNjgsIm5iZiI6MTc0MDE1OTk2OCwicGF0aCI6Ii8xMTQxMTcxMzgvNDE1NzY2MzMwLWIxODI1Y2ViLWVjZTYtNGI5Yi1hZjU2LTgzM2MyZjk0YjAyMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIyMVQxNzQ2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNmI1N2YzYzFmYmYwNWQ3OWQ0ZDg5OGU1OWFkNzFmYzU0YWQ2ZmViYTlkZjVhYTc5MDI5MzQ2YjYxMWIyOTcxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.lO0o0v2PyyfeIV4U8zeFQMDTZRrSLIpDM-9ccu_44pw)
+API REST – integração com [backend](https://github.com/RodolfoCarvalhoGamaDeLima/Books-server) para buscar e favoritar  livros 
 
-❌ Fechar o modal clicando no botão "Fechar"
 
-🛠️ Tecnologias Utilizadas:
-React.js  
-Styled-components   
-JavaScript   
+🧩 Como rodar o projeto
+bash
+Copiar
+Editar
+# Clone o repositório
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+# Acesse a pasta do projeto
+cd nome-do-repositorio
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm start
+✨ Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções ou novas funcionalidades.
